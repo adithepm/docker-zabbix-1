@@ -5,9 +5,9 @@ MAINTAINER Bernardo Gomez Palacio <bernardo.gomezpalacio@gmail.com>
 ENV REFRESHED_AT 2015-03-19
 
 # Install EPEL to have MySQL packages.
-RUN yum install -y http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+RUN yum install -y http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 # Install Zabbix release packages.
-RUN yum install -y http://repo.zabbix.com/zabbix/2.4/rhel/6/x86_64/zabbix-release-2.4-1.el6.noarch.rpm
+RUN yum install -y http://repo.zabbix.com/zabbix/4.0/rhel/8/x86_64/zabbix-release-4.0-2.el8.noarch.rpm
 # Refresh
 RUN yum makecache
 # Installing Tools.
@@ -59,7 +59,7 @@ RUN yum -y -q install zabbix-agent  \
               zabbix-server-mysql   \
               zabbix-web            \
               zabbix-web-mysql      \
-              zabbix22-dbfiles-mysql
+              zabbix40-dbfiles-mysql
 
 # YUM Cleanup
 RUN yum clean all && rm -rf /tmp/*
